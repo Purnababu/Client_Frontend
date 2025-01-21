@@ -62,7 +62,8 @@ export class RegisterPageComponent implements OnInit {
       deadlineDate: ['', Validators.required], // Ensure this field is present
       mobileNumber: ['', [Validators.required, Validators.pattern(/^\d{10}$/)]],
       employeeId: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required]],
+      // password: ['', [Validators.required]],
+      password: ['12345', [Validators.required]] ,// Default value set here
       address: ['', Validators.required],
       batchTiming: ['', Validators.required],
     });

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/Services/auth.service';
 
 @Component({
     selector: 'app-instructor-navbar',
@@ -7,11 +8,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InstructorNavbarComponent implements OnInit {
 
-    constructor() { }
-
+    
     ngOnInit(): void {
     }
 
+
+    constructor(private authService: AuthService) {}
+
+  onLogout(): void {
+    this.authService.userLogout();
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // --------------------------------------------------------------------
     switcherClassApplied = false;
     switcherToggleClass() {
         this.switcherClassApplied = !this.switcherClassApplied;

@@ -144,7 +144,8 @@ import { AuthInterceptorInterceptor } from './Guards/auth-interceptor.intercepto
         InstructorEarningsComponent,
         InstructorWithdrawComponent,
         InstructorSettingsComponent,
-        InstructorStudentsComponent,
+        InstructorStudentsComponent
+        
     ],
     imports: [
         BrowserModule,

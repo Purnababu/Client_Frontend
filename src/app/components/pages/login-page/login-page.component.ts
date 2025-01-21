@@ -115,7 +115,15 @@ export class LoginPageComponent implements OnInit {
         alert('Your account is deactivated. Redirecting to login...');
         this.router.navigate(['/login']);
       }
-    } else {
+
+
+    } else if(role === 'Staff'){
+      alert('Welcome Staff Member')
+       this.router.navigate(['/instructor-dashboard'])
+    }
+    
+    
+    else {
       // Handle invalid or other roles
       alert('Invalid Role');
       this.router.navigate(['/login']);
