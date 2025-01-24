@@ -72,8 +72,8 @@ const routes: Routes = [
     // Admin dashboard
     {path: 'admin-dashboard', component: AdminDashboardComponent,canActivate:[adminGuard]},
     {path: 'admin-profile', component: AdminProfileComponent},
-    {path: 'admin-courses', component: AdminCoursesComponent},
-    {path: 'admin-purchase-history', component: AdminPurchaseHistoryComponent},
+    {path: 'admin-courses', component: AdminCoursesComponent,canActivate:[adminGuard]},
+    {path: 'admin-purchase-history', component: AdminPurchaseHistoryComponent,canActivate:[adminGuard]},
     {path: 'admin-settings', component: AdminSettingsComponent},
 
     // User dashboard

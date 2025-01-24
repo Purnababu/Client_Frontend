@@ -21,6 +21,8 @@ export class AdminCoursesComponent implements OnInit {
         (response) => {
           console.log('Student registered successfully!', response);
           alert('Student registered successfully!'); // Simple pop-up alert
+          window.location.reload(); // Reload the page to reset the form
+         
         },
         (error) => {
           console.error('Error registering student!', error);
