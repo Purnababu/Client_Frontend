@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { StudentServiceService } from 'src/app/Services/student-service.service';
+import { StudentEnrollment } from '../../Modals/student-enrollment';
 
 @Component({
     selector: 'app-admin-courses',
@@ -7,15 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminCoursesComponent implements OnInit {
 
-    constructor() { }
+    student: StudentEnrollment = new StudentEnrollment();
 
-    ngOnInit(): void {}
-
-    // Tabs
-    currentTab = 'tab1';
-    switchTab(event: MouseEvent, tab: string) {
-        event.preventDefault();
-        this.currentTab = tab;
+    constructor(private studentService: StudentServiceService) {}
+    ngOnInit(): void {
+        throw new Error('Method not implemented.');
     }
+  
+    register() {
+      this.studentService.registerStudent(this.student).subscribe(
+        (response) => {
+          console.log('Student registered successfully!', response);
+          alert('Student registered successfully!'); // Simple pop-up alert
+        },
+        (error) => {
+          console.error('Error registering student!', error);
+          alert('Error registering student! Please try again.');
+        }
+      );
+    }
+  
 
 }

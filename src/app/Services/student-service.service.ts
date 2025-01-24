@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Employee } from '../components/Modals/employee';
 import { EducationalDetails } from '../components/Modals/educational-details';
+import { StudentEnrollment } from '../components/Modals/student-enrollment';
+import { Transaction } from '../components/Modals/transaction';
 
 @Injectable({
   providedIn: 'root'
@@ -48,5 +50,26 @@ export class StudentServiceService {
   // Method to get educational details for an employee
   getEducationalDetails(employeeId: string): Observable<EducationalDetails> {
     return this.http.get<EducationalDetails>(`${this.apiUrl}/getEducatonal/${employeeId}`);
+  }
+
+
+
+
+
+
+
+
+
+
+  // --------------------------------------------------------------------
+  registerStudent(student: StudentEnrollment): Observable<StudentEnrollment> {
+    return this.http.post<StudentEnrollment>(`${this.apiUrl}/register`, student);
+  }
+
+
+
+  // Create or update a transaction
+  saveTransaction(transaction: Transaction): Observable<Transaction> {
+    return this.http.post<Transaction>(`${this.apiUrl}/addTrasaction`, transaction);
   }
 }
